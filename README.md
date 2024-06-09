@@ -109,5 +109,10 @@ pip install cython_bbox
 # faiss gpu
 pip install faiss-gpu
 ```
+### 準備 ReID 資料集  
+```shell
+cd <AICUP-MOT-5014>
 
-###
+# For AICUP 
+python fast_reid/datasets/generate_AICUP_patches.py --data_path <dataets_dir>/AI_CUP_MCMOT_dataset/train
+```

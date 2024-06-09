@@ -137,3 +137,13 @@ cd <AICUP-MOT-5014>
 # For training AICUP 
 python3 fast_reid/tools/train_net.py --config-file fast_reid/configs/AICUP/bagtricks_R50-ibn.yml MODEL.DEVICE "cuda:0"
 ```
+### Fine-tune(微調) YOLOv7 for AICUP
+- 資料集路徑配置在 `yolov7/data/AICUP.yaml`.
+- 模型架構可以配置在 `yolov7/cfg/training/yolov7-AICUP.yaml`.
+- 超參數配置在 `yolov7/data/hyp.scratch.custom.yaml` (default is `yolov7/data/hyp.scratch.p5.yaml`).
+
+``` shell
+cd <BoT-SORT_dir>
+# finetune p5 models
+python yolov7/train.py --device 0 --batch-size 4 --epochs 50 --data yolov7/data/AICUP.yaml --img 1280 1280 --cfg yolov7/cfg/training/yolov7-AICUP.yaml --weights 'pretrained/yolov7.pt' --name yolov7-AICUP --hyp data/hyp.scratch.custom.yaml
+```

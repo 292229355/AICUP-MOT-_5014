@@ -154,3 +154,14 @@ cd <AICUP-MOT-5014>
 
 bash tools/track_all_timestamps.sh --weights "pretrained/yolov7.pt" --source-dir "AI_CUP_MCMOT_dataset/train/images" --device "0" --fast-reid-config "fast_reid/configs/AICUP/bagtricks_R50-ibn.yml" --fast-reid-weights "logs/AICUP/bagtricks_R50-ibn/model_00xx.pth"
 ```
+## 對提交的檔案進行評估
+在評估之前，我們需要跑`tools/datasets/AICUP_to_MOT15.py`，將數據轉換為提交格式
+```bash
+cd <AICUP-MOT-5014>
+python tools/datasets/AICUP_to_MOT15.py --AICUP_dir "your AICUP dataset path" --MOT15_dir "converted dataset directory" --imgsz "img size, (height, width)"
+```
+我們可以使用 `tools/evaluate.py` 來評估自己提交的檔案：
+```bash
+cd <BoT-SORT_dir>
+python tools/evaluate.py --gt_dir "Path to the ground truth directory" --ts_dir "Path to the tracking result directory"
+```

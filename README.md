@@ -61,3 +61,22 @@ class ChannelAttentionModule(nn.Module):
             fc_out = self.shared_MLP(self.avg_pool(x))
         return x * self.act(fc_out)
 ```
+```py
+class SpatialAttentionModule(nn.Module):  ##update:coding-style FOR LIGHTING
+    def __init__(self, kernel_size=7):
+        super().__init__()
+        assert kernel_size in (3, 7), "kernel size must be 3 or 7"
+        padding = 3 if kernel_size == 7 else 1
+        self.cv1 = nn.Conv2d(2, 1, kernel_size, padding=padding, bias=False)
+        self.act = nn.Sigmoid()
+
+    def forward(self, x):
+        return x * self.act(
+            self.cv1(
+                torch.cat(
+                    [torch.mean(x, 1, keepdim=True), torch.max(x, 1, keepdim=True)[0]],
+                    1,
+                )
+            )
+        )
+```

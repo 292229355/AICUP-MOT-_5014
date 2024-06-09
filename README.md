@@ -143,7 +143,14 @@ python3 fast_reid/tools/train_net.py --config-file fast_reid/configs/AICUP/bagtr
 - 超參數配置在 `yolov7/data/hyp.scratch.custom.yaml` (default is `yolov7/data/hyp.scratch.p5.yaml`).
 
 ``` shell
-cd <BoT-SORT_dir>
+cd <AICUP-MOT-5014>
 # finetune p5 models
 python yolov7/train.py --device 0 --batch-size 4 --epochs 50 --data yolov7/data/AICUP.yaml --img 1280 1280 --cfg yolov7/cfg/training/yolov7-AICUP.yaml --weights 'pretrained/yolov7.pt' --name yolov7-AICUP --hyp data/hyp.scratch.custom.yaml
+```
+## Tracking 並創建 AICUP 的提交文件 (Demo)
+要track資料夾中全部 `<timestamps>` 的話, 可以執行以下程式:
+```shell
+cd <AICUP-MOT-5014>
+
+bash tools/track_all_timestamps.sh --weights "pretrained/yolov7.pt" --source-dir "AI_CUP_MCMOT_dataset/train/images" --device "0" --fast-reid-config "fast_reid/configs/AICUP/bagtricks_R50-ibn.yml" --fast-reid-weights "logs/AICUP/bagtricks_R50-ibn/model_00xx.pth"
 ```

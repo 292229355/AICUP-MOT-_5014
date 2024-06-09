@@ -168,3 +168,13 @@ python tools/evaluate.py --gt_dir "Path to the ground truth directory" --ts_dir 
 以下為我們訓練出來的結果(測試階段):
 
 ![image_CBAM](https://github.com/292229355/AICUP-MOT-_5014/assets/168358784/420a02a1-dd1e-4adc-b865-ce345b51d7bd)
+
+以下為F1 curve:
+
+![F1_curve](https://github.com/292229355/AICUP-MOT-_5014/assets/168358784/330e1334-299a-4856-9476-9339d5249c7c)
+
+
+
+
+
+

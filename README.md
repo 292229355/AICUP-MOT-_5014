@@ -80,3 +80,34 @@ class SpatialAttentionModule(nn.Module):  ##update:coding-style FOR LIGHTING
             )
         )
 ```
+## 安裝
+** 程式是在Ubuntu 22.04上做測試 **
+
+### 設定Conda
+**Step 1.** 安裝 Conda 環境以及安裝 pytorch.
+```shell
+conda create -n botsort python=3.7
+conda activate botsort
+```
+**Step 2.** **安裝 numpy **
+```shell
+pip install numpy
+```
+**Step 3.** 安裝 `requirements.txt`
+```shell
+pip install -r requirements.txt
+```
+**Step 4.** 安裝 [pycocotools](https://github.com/cocodataset/cocoapi).
+```shell
+pip install cython; pip3 install 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
+```
+**Step 5.** 其它
+```shell
+# Cython-bbox
+pip install cython_bbox
+
+# faiss gpu
+pip install faiss-gpu
+```
+
+###

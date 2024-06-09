@@ -125,7 +125,7 @@ python yolov7/tools/AICUP_to_YOLOv7.py --AICUP_dir datasets/AI_CUP_MCMOT_dataset
 ## Model Zoo for MOT17 & COCO
 安裝以及儲存被訓練的模型在 'pretrained' 資料夾:
 ```
-<BoT-SORT_dir>/pretrained
+<AICUP_MOT_5014>/pretrained
 ```
 
 ## 訓練 (Fine-tuning(微調))

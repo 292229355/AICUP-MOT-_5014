@@ -127,3 +127,13 @@ python yolov7/tools/AICUP_to_YOLOv7.py --AICUP_dir datasets/AI_CUP_MCMOT_dataset
 ```
 <BoT-SORT_dir>/pretrained
 ```
+
+## 訓練 (Fine-tuning(微調))
+
+### 訓練 ReID 模型 for AICUP
+```shell
+cd <AICUP-MOT-5014>
+
+# For training AICUP 
+python3 fast_reid/tools/train_net.py --config-file fast_reid/configs/AICUP/bagtricks_R50-ibn.yml MODEL.DEVICE "cuda:0"
+```

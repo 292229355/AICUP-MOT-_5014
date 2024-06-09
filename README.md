@@ -165,3 +165,6 @@ python tools/datasets/AICUP_to_MOT15.py --AICUP_dir "your AICUP dataset path" --
 cd <BoT-SORT_dir>
 python tools/evaluate.py --gt_dir "Path to the ground truth directory" --ts_dir "Path to the tracking result directory"
 ```
+以下為我們訓練出來的結果(測試階段):
+
+![image_CBAM](https://github.com/292229355/AICUP-MOT-_5014/assets/168358784/420a02a1-dd1e-4adc-b865-ce345b51d7bd)

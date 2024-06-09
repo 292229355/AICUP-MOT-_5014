@@ -89,7 +89,7 @@ class SpatialAttentionModule(nn.Module):  ##update:coding-style FOR LIGHTING
 conda create -n botsort python=3.7
 conda activate botsort
 ```
-**Step 2.** **安裝 numpy **
+**Step 2.** 安裝 numpy
 ```shell
 pip install numpy
 ```

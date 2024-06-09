@@ -116,3 +116,9 @@ cd <AICUP-MOT-5014>
 # For AICUP 
 python fast_reid/datasets/generate_AICUP_patches.py --data_path <dataets_dir>/AI_CUP_MCMOT_dataset/train
 ```
+### 準備 YOLOv7 資料集
+```
+cd <AICUP-MOT-5014>
+
+python yolov7/tools/AICUP_to_YOLOv7.py --AICUP_dir datasets/AI_CUP_MCMOT_dataset/train --YOLOv7_dir datasets/AI_CUP_MCMOT_dataset/yolo
+```
